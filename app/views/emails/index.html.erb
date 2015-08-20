@@ -1,0 +1,16 @@
+<div class="emails">
+  <div class="container">
+
+    <div class="row">
+      <% @emails.each do |email|%> 
+        <div class="item col-md-4">
+          <div class="email-info">
+            <h2><%= link_to "#{email.title}", email_path(email) %></h2> 
+            <p><%= link_to "#{email.body[1..20]}....", email_path(email) %></p>
+          </div>
+        </div>
+      <% end %> 
+    </div>
+
+  </div>
+</div>

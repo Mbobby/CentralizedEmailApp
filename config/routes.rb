@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
 
-  root 'sessions#new'
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  root 'emails#index'
   get 'signup'  => 'users#new' 
   resources :users
   
-  get '/login' => 'sessions#new'
+  get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+
+  resources :emails
+  get 'inbox' => 'emails#index'
+  get 'inbox/:id' => 'email#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
