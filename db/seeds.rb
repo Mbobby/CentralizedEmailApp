@@ -6,11 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-carlos = User.create(first_name: 'Carlos', last_name: 'Bueno', email: 'carlos@email.com',
+carlos = User.create(first_name: 'Carlos', last_name: 'Bueno', username: "Carlos", email: 'carlos@email.com',
  password: 'Carlos1', password_confirmation: 'Carlos1')
-freida = User.create(first_name: 'Frieda', last_name: 'Bueno', email: 'freida@email.com',
+freida = User.create(first_name: 'Frieda', last_name: 'Bueno', username: "Freida", email: 'freida@email.com',
  password: 'Freida1', password_confirmation: 'Freida1')
-julian = User.create(first_name: 'Julian', last_name: 'Bueno', email: 'julian@email.com',
+julian = User.create(first_name: 'Julian', last_name: 'Bueno', username: "Julian", email: 'julian@email.com',
  password: 'Julian1', password_confirmation: 'Julian1')
 
 email1 = Email.new(authorId: carlos.id, title: "Hello World 1", body: "This is first email from Carlos")
