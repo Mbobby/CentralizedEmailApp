@@ -1,27 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>CentrailzedEmailApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>Basis Template for Bootstrap 3</title>
+	<meta name="generator" content="Bootply" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href=<%= asset_path 'stylesheets/bootstrap.min.css' %> rel="stylesheet">
+	<title>CentrailzedEmailApp</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	<script src=<%= asset_path 'javascripts/bootstrap.min.js' %>></script>
+	<!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link href=<%= asset_path 'stylesheets/styles.css' %> rel="stylesheet">
 </head>
 <body>
-	<div class="nav pull-right">
-		<% if current_user %> 
-		<ul> 
-			<li><%= current_user.email %></li> 
-			<li><%= link_to "Log out", logout_path, method: "delete" %></li> 
-		</ul> 
-		<% else %> 
-		<ul> 
-			<li><%= link_to "Login", 'login' %></a></li> 
-			<li><%= link_to "Signup", 'signup' %></a></li> 
-		</ul> 
-		<% end %>
-		
+	<div class="wrapper">
+		<div class="box">
+			<div class="row">
+				<!-- sidebar -->
+				<div class="column col-sm-3" id="sidebar">
+					<a class="logo" href="#">E</a>
+					<ul class="nav">
+						<% if current_user %> 
+							<li class="active"><%= current_user.username %>
+							</li>
+							<li><%= link_to "Inbox", inbox_path %>
+							</li>
+							<li><%= link_to "Log out", logout_path, method: "delete" %>
+							</li>
+						<% else %> 
+							<li class="active"><%= link_to "Login", 'login' %></a>
+							</li>
+							<li><%= link_to "Signup", 'signup' %></a>
+							</li>
+						<% end %>
+					</ul>
+					<ul class="nav hidden-xs" id="sidebar-footer">
+						<li>
+							<a href="http://www.bootply.com"><h3>Centralized Email App</h3><i class="glyphicon glyphicon-heart-empty"></i> by Emmanuel E. Mong</a>
+						</li>
+					</ul>
+				</div>
+				<!-- /sidebar -->	
+
+				<!-- main -->
+				<div class="column col-sm-9" id="main">
+					<div class="padding">
+						<div class="full col-sm-9">
+							<%= yield %>
+						</div><!-- /col-9 -->
+					</div><!-- /padding -->
+				</div>
+			</div>
+		</div>
 	</div>
-<%= yield %>
+
+
 
 </body>
 </html>
