@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'emails#index'
   get 'signup'  => 'users#new' 
+  
   resources :users
   
   get 'login' => 'sessions#new'

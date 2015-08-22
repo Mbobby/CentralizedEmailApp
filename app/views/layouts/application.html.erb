@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
-	<title>Basis Template for Bootstrap 3</title>
+	<title>Centralized Email App</title>
 	<meta name="generator" content="Bootply" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href=<%= asset_path 'stylesheets/bootstrap.min.css' %> rel="stylesheet">
@@ -27,7 +27,7 @@
 					<a class="logo" href="#">E</a>
 					<ul class="nav">
 						<% if current_user %> 
-							<li class="active"><%= current_user.username %>
+							<li ><%= link_to "#{current_user.username}", edit_user_path(current_user) %>					
 							</li>
 							<li><%= link_to "Inbox", inbox_path %>
 							</li>
