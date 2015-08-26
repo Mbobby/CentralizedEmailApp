@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to '/'
     else
+      flash[:notice] = "Invalid Username/Password Combination"
       redirect_to '/login'
     end
   end

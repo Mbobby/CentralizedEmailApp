@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   resources :emails
   get 'inbox' => 'emails#index'
-  get 'inbox/:id' => 'email#show'
+  get 'inbox/:id' => 'emails#show'
+  get 'send' => 'emails#new'
+  post 'send' => 'emails#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

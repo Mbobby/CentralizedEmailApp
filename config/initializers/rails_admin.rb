@@ -15,6 +15,13 @@ RailsAdmin.config do |config|
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
+  config.authorize_with do
+    authenticate_or_request_with_http_basic('Site Message') do |username, password|
+      username == 'bobby' && password == 'bobby'
+    end
+  end
+
+  config.main_app_name { ['Centralized Email App', 'Admin'] }
 
   config.actions do
     dashboard                     # mandatory

@@ -2,6 +2,7 @@ class EmailsController < ApplicationController
 	before_action :require_user
 
 	def new
+		@email = Email.new
 	end
 
 	def index
@@ -15,4 +16,8 @@ class EmailsController < ApplicationController
 
 	# def destroy
 	# end
+
+	def email_params
+		params.require(:email).permit(:authorId, :title,:body, :username)
+	end
 end

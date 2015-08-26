@@ -1,0 +1,18 @@
+<div class="login">
+  <div class="container">
+    <div class="form">
+
+    <h1>New Email</h1>
+
+    <%= form_for(@email) do |f| %>
+      <%= f.hidden_field :authorId, :value => current_user.id %>
+      <%= f.text_field :title, :placeholder => "Title" %>
+      <%= f.text_field :username, :placeholder => "Recepients"%>
+      <%= f.text_field :body, :placeholder => "Content"%>
+      <%= f.submit "Send", class: "btn-submit" %>
+    <% end %>
+
+  
+    </div>
+  </div>
+</div>
