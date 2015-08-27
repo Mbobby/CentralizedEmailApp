@@ -12,10 +12,13 @@ freida = User.create(first_name: 'Frieda', last_name: 'Bueno', username: "Freida
  password: 'Freida1', password_confirmation: 'Freida1')
 julian = User.create(first_name: 'Julian', last_name: 'Bueno', username: "Julian", email: 'julian@email.com',
  password: 'Julian1', password_confirmation: 'Julian1')
+bobby = User.create(first_name: 'Bobby', last_name: 'Bobby', username: "BoBBy", email: 'BoBbY@email.com',
+ password: 'bobby', password_confirmation: 'bobby')
 
 email1 = Email.new(authorId: carlos.id, title: "Hello World 1", body: "This is first email from Carlos")
 email2 = Email.new(authorId: freida.id, title: "Hello World 2", body: "This is first email from Freida")
 email3 = Email.new(authorId: julian.id, title: "Hello World 3", body: "This is first email from Julian")
+email4 = Email.new(authorId: bobby.id, title: "Hello World 3", body: "This is first email from Julian")
 
 email1.users << freida
 email1.users << julian
@@ -23,6 +26,7 @@ email1.save
 
 email2.users << carlos
 email2.users << julian
+email2.users << bobby
 email2.save
 
 
@@ -30,3 +34,8 @@ email3.users << carlos
 email3.users << freida
 email3.users << julian
 email3.save
+
+email4.users << carlos
+email4.users << freida
+email4.users << julian
+email4.save

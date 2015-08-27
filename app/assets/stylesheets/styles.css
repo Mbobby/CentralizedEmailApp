@@ -88,6 +88,9 @@ a {
 #footer {
   margin-bottom:20px;
 }
+.username:first-letter{
+  text-transform: capitalize;
+}
 
 /* center and adjust the sidebar contents on smaller devices */
 @media (max-width: 768px) {
