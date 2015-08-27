@@ -7,8 +7,8 @@
     <%= form_for(@email) do |f| %>
       <%= f.hidden_field :authorId, :value => current_user.id %>
       <%= f.text_field :title, :placeholder => "Title" %>
-      <%= f.text_field :username, :placeholder => "Recepients"%>
-      <%= f.text_field :body, :placeholder => "Content"%>
+      <%= text_field_tag 'username',nil,  placeholder: 'Recepient\'s Username'%>
+      <%= f.text_area :body, :placeholder => "Email Content", cols: "50", rows: "10"%>
       <%= f.submit "Send", class: "btn-submit" %>
     <% end %>
 
