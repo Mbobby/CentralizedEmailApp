@@ -1,0 +1,7 @@
+<div class="col-sm-12" id="stories">  
+  <div class="page-header text-muted divider">
+    <h3><%= @email.title %></h2>
+  </div>
+</div>
+<p><%= @email.body %></p>
+<small><%= time_ago_in_words(@email.created_at) %> </small>

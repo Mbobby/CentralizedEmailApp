@@ -1,0 +1,19 @@
+<div class="login">
+  <div class="container">
+    <div class="form">
+
+    <h1>Edit User</h1>
+
+    <%= form_for(@user) do |f| %>
+      <%= f.text_field :first_name, :placeholder => "#{current_user.first_name}" %>
+      <%= f.text_field :last_name, :placeholder => "#{current_user.last_name}" %>
+      <%= f.email_field :email, :placeholder => "#{current_user.email}" %>
+      <%= f.text_field :username, :placeholder => "#{current_user.username}" %>
+      <%= f.password_field :password, :placeholder => "Password" %>
+      <%= f.submit "Submit", class: "btn-submit" %>
+    <% end %>
+
+  
+    </div>
+  </div>
+</div>

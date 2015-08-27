@@ -12,9 +12,9 @@ Rails.application.routes.draw do
 
   resources :emails
   get 'inbox' => 'emails#index'
-  get 'inbox/:id' => 'emails#show'
   get 'send' => 'emails#new'
   get 'sent' => 'emails#sent'
+  get 'view/:id' => 'emails#show', as: :view
   post 'send' => 'emails#create'
 
   # The priority is based upon order of creation: first created -> highest priority.

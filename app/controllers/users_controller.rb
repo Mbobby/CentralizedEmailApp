@@ -16,6 +16,18 @@ class UsersController < ApplicationController
 	end  
 
 	def edit
+		@user = User.find(params[:id])
+	end
+
+	def update
+		@user = User.find(params[:id])
+		if @user.update_attributes(user_params)
+			flash[:notice] = "User account has been successfully edited."
+			redirect_to '/inbox'
+		else
+			flash[:notice] = "User account was not updated, please check for incorrect input"
+			redirect_to edit_user_path(current_user)
+		end
 	end
 
 	private

@@ -6,11 +6,11 @@ class EmailsController < ApplicationController
 	end
 
 	def index
-		@emails = current_user.emails
+		@emails = current_user.emails.order(created_at: :desc)
 	end
 
 	def show
-		@email = Email.find(:id)
+		@email = Email.find(params[:id])
 	end
 	
 	def create
@@ -40,7 +40,7 @@ class EmailsController < ApplicationController
 
 
 	def sent
-		@emails = Email.where(authorId: current_user.id)
+		@emails = Email.where(authorId: current_user.id).order(created_at: :desc)
 	end
 	
 	private
