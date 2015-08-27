@@ -15,7 +15,8 @@ class EmailsController < ApplicationController
 	
 	def create
 		@email = Email.new(email_params)
-		@user = User.find_by_username(params['username'])
+		username = params['username'].downcase
+		@user = User.find_by_username(username)
 		if(@user)
 			@email.users << @user
 		else
